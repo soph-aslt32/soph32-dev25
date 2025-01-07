@@ -1,0 +1,249 @@
+{
+    "editor.fontFamily": "'Monoid', 'Rounded Mgen+ 1mn'",
+    "workbench.iconTheme": "helium-icon-theme",
+    "editor.renderWhitespace": "all",
+    "editor.suggest.showWords": false,
+    "rust-analyzer.completion.autoimport.enable": false,
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.detectIndentation": false,
+    "python.analysis.completeFunctionParens": true,
+    "workbench.colorCustomizations": {
+        "editorInlayHint.foreground": "#8f8f8f",
+        "editorInlayHint.background": "#0e294b",
+        "editorInlayHint.parameterBackground": "#0e294b",
+        "editorInlayHint.typeBackground": "#0e294b",
+        "editorInlayHint.parameterForeground": "#8f8f8f",
+        "editorInlayHint.typeForeground": "#8f8f8f",
+    },
+    "[markdown]": {
+        "editor.tabSize": 2
+    },
+    "window.openFilesInNewWindow": "on",
+    "markdownlint.config": {
+        "MD024": {
+            "siblings_only": true
+        }
+    },
+    "python.analysis.autoImportCompletions": false,
+    "workbench.editor.wrapTabs": true,
+    "markdown-preview-enhanced.previewTheme": "github-light.css",
+    "todo-tree.highlights.defaultHighlight": {
+        "gutterIcon": true,
+        "foreground": "#FAD201",
+        "background": "#2271B3",
+        "type": "text",
+        "opacity": 100
+    },
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "WIP",
+        "NOTE",
+        "DEBUG",
+    ],
+    "editor.acceptSuggestionOnEnter": "off",
+    "terminal.integrated.fontSize": 12,
+    "window.confirmSaveUntitledWorkspace": false,
+    "hediet.vscode-drawio.resizeImages": null,
+    "security.workspace.trust.enabled": false,
+    "editor.fontSize": 12,
+
+    // -----------以下Latexの設定-----------
+    // 和文を使うため、助詞、句読点、全角括弧などを区切り文字として登録する
+    "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?　、。「」【】『』（）！？てにをはがのともへでや",
+    // 以下、LaTeX Workshopの設定
+    // LaTeXでビルドする際の設定を「Tool」「Recipi」の2種類設定する
+    //   Tool ...1つのコマンド。料理で言うところの、「焼く」「煮る」などの操作かな。
+    //   "latex-workshop.latex.tools" で定義。
+    //   Recipe ...Tool を組み合わせて料理（つまりは文書）を作るレシピ。
+    //   "latex-workshop.latex.recipes"で定義。
+    //   デフォルトの操作は、1番最初に定義されたレシピになる（他のレシピも選択可）
+    // Tool の定義
+    "latex-workshop.latex.tools": [
+        // latexmk によるlualatex
+        {
+            "name": "Latexmk (LuaLaTeX)",
+            "command": "latexmk",
+            "args": [
+                "-f",
+                "-gg",
+                // "-pv",
+                "-lualatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        // latexmk による xelatex
+        {
+            "name": "Latexmk (XeLaTeX)",
+            "command": "latexmk",
+            "args": [
+                "-f",
+                "-gg",
+                "-pv",
+                "-xelatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        // latexmk による uplatex
+        {
+            "name": "Latexmk (upLaTeX)",
+            "command": "latexmk",
+            "args": [
+                "-f",
+                "-gg",
+                "-pv",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        // latexmk による platex
+        //こいつ使うときもしかしたらpdf生成されずにdviまでしかできないかも
+        {
+            "name": "Latexmk (pLaTeX)",
+            "command": "latexmk",
+            "args": [
+                "-f",
+                "-gg",
+                "-pv",
+                "-latex='platex'",
+                "-latexoption='-kanji=utf8 -no-guess-input-env'",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ]
+        }
+    ],
+    // Recipe の定義
+    "latex-workshop.latex.recipes": [
+        // LuaLaTeX のレシピ
+        {
+            "name": "LuaLaTeX",
+            "tools": [
+                "Latexmk (LuaLaTeX)"
+            ]
+        },
+        // XeLaTeX のレシピ
+        {
+            "name": "XeLaTeX",
+            "tools": [
+                "Latexmk (XeLaTeX)"
+            ]
+        },
+        // upLaTeX のレシピ
+        {
+            "name": "upLaTeX",
+            "tools": [
+                "Latexmk (upLaTeX)"
+            ]
+        },
+        // pLaTeX のレシピ
+        {
+            "name": "pLaTeX",
+            "tools": [
+                "Latexmk (pLaTeX)"
+            ]
+        },
+    ],
+    // マジックコメント付きの LaTeX ドキュメントのビルド設定
+    // 特に記事では扱わないが、いつか使うことを考えて書いとく。
+    // 参考: https://blog.miz-ar.info/2016/11/magic-comments-in-tex/
+    "latex-workshop.latex.magic.args": [
+        "-f",
+        "-gg",
+        "-pv",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+    ],
+    // 不要なファイルをクリーンアップする時の目印となる拡張子
+    // 不要な一時ファイルや中間ファイルを自動削除する機能がある。
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.synctex.gz",
+        // for Beamer files
+        "_minted*",
+        "*.nav",
+        "*.snm",
+        "*.vrb",
+    ],
+    // ビルド失敗した際の残存ファイルが以降のビルドに影響を与えることがあるため、
+    // 残存ファイルを削除する設定
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    // PDFビューワの開き方。画面分割で開く。
+    "latex-workshop.view.pdf.viewer": "tab",
+    // LaTeXファイル保存時にPDFも更新するかどうか。
+    // LuaLaTeXはビルドが遅いので、かえって煩わしいので無効化
+    // (u)pLaTeXなら有効化しておいてもいいかも。
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "[tex]": {
+        // スニペット補完中にも補完を使えるようにする
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        // インデント幅を2にする
+        "editor.tabSize": 2,
+        "editor.wordWrap": "on",
+    },
+    "[latex]": {
+        // スニペット補完中にも補完を使えるようにする
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        // インデント幅を2にする
+        "editor.tabSize": 2,
+        "editor.wordWrap": "on",
+    },
+    "[bibtex]": {
+        // インデント幅を2にする
+        "editor.tabSize": 2,
+        "editor.wordWrap": "on",
+    },
+    // 使用パッケージのコマンドや環境の補完を有効化
+    "latex-workshop.intellisense.package.enabled": true,
+    // 作成したファイルを、直下の "out" フォルダへ出力
+    "latex-workshop.latex.outDir": "out",
+    // ------------------Latexの設定終了-------------------
+
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "latex": false,
+    },
+    "hediet.vscode-drawio.theme": "atlas",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+}
