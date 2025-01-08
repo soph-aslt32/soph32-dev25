@@ -1,6 +1,18 @@
 {
     "editor.fontFamily": "'Monoid', 'Rounded Mgen+ 1mn'",
+
+    // ---- workbench の設定 ----
+    "workbench.editor.wrapTabs": true,
     "workbench.iconTheme": "helium-icon-theme",
+    "workbench.colorCustomizations": {
+        "editorInlayHint.foreground": "#454ade",
+        "editorInlayHint.background": "#1b1f3b",
+        "editorInlayHint.parameterForeground": "#454ade",
+        "editorInlayHint.parameterBackground": "#1b1f3b",
+        "editorInlayHint.typeForeground": "#454ade",
+        "editorInlayHint.typeBackground": "#1b1f3b",
+    },
+
     "editor.renderWhitespace": "all",
     "editor.suggest.showWords": false,
     "rust-analyzer.completion.autoimport.enable": false,
@@ -8,16 +20,9 @@
     "security.workspace.trust.untrustedFiles": "open",
     "editor.detectIndentation": false,
     "python.analysis.completeFunctionParens": true,
-    "workbench.colorCustomizations": {
-        "editorInlayHint.foreground": "#8f8f8f",
-        "editorInlayHint.background": "#0e294b",
-        "editorInlayHint.parameterBackground": "#0e294b",
-        "editorInlayHint.typeBackground": "#0e294b",
-        "editorInlayHint.parameterForeground": "#8f8f8f",
-        "editorInlayHint.typeForeground": "#8f8f8f",
-    },
     "[markdown]": {
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
+        "editor.wordWrap": "on",
     },
     "window.openFilesInNewWindow": "on",
     "markdownlint.config": {
@@ -26,12 +31,15 @@
         }
     },
     "python.analysis.autoImportCompletions": false,
-    "workbench.editor.wrapTabs": true,
     "markdown-preview-enhanced.previewTheme": "github-light.css",
+
+    // ----- `Todo Tree` -----
     "todo-tree.highlights.defaultHighlight": {
         "gutterIcon": true,
-        "foreground": "#FAD201",
-        "background": "#2271B3",
+        // "icon": "",
+        // "iconColour": "",
+        "foreground": "#FA8116",
+        "background": "#0E497D",
         "type": "text",
         "opacity": 100
     },
@@ -45,7 +53,35 @@
         "WIP",
         "NOTE",
         "DEBUG",
+        "ASWIP",
     ],
+    "todo-tree.highlights.customHighlight": {
+        "BUG": {
+            "icon": "bug"
+        },
+        "HACK": {
+            "icon": "tools"
+        },
+        "FIXME": {
+            "icon": "flame"
+        },
+        "XXX": {
+            "icon": "x"
+        },
+        "[ ]": {
+            "icon": "issue-draft"
+        },
+        "[x]": {
+            "icon": "issue-closed"
+        },
+        "ASWIP": {
+            "icon": "squirrel",
+            "rulerLane": "right",
+            "rulerColour": "#FA8116",
+        },
+    },
+    // -----------------------
+
     "editor.acceptSuggestionOnEnter": "off",
     "terminal.integrated.fontSize": 12,
     "window.confirmSaveUntitledWorkspace": false,
@@ -246,4 +282,7 @@
     },
     "hediet.vscode-drawio.theme": "atlas",
     "editor.unicodeHighlight.ambiguousCharacters": false,
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
 }
