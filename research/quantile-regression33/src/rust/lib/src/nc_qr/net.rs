@@ -1,6 +1,5 @@
-use anyhow::Result;
 use tch::nn::{LinearConfig, ModuleT, SequentialT};
-use tch::{nn, Device, Tensor, Kind};
+use tch::{nn, Tensor};
 
 pub struct NetConfig {
     /// Embeddingネットワークの中間層のユニット数です．
@@ -33,9 +32,6 @@ pub struct Net {
     /// 訓練モードのフラグです．
     train: bool,
 
-    /// Variable Storeです．
-    vs: nn::VarStore,
-
     /// Embeddingネットワークです．
     embedding_net: SequentialT,
 
@@ -55,17 +51,13 @@ pub struct Net {
 impl Net {
     pub fn new(
         config: NetConfig,
-        device: Device,
+        p: &nn::Path,
     ) -> Self {
         let train = true;
 
         let input_dim = config.input_dim;
         let action_dim = config.action_dim;
         let n_quantile = config.n_quantile;
-
-        // Variable Storeを生成.
-        let vs = nn::VarStore::new(device);
-        let p = &vs.root();
 
         // Embeddingネットワークを生成.
         let embedding_net = Self::mlp_mish(
@@ -117,7 +109,6 @@ impl Net {
 
         Self {
             train,
-            vs,
             embedding_net,
             alpha_net,
             beta_net,
@@ -199,22 +190,23 @@ impl Net {
 #[cfg(test)]
 mod test {
     use super::*;
+    use anyhow::Result;
+    use tch::{Device, Kind};
 
     #[test]
     fn test_net_new_forward() -> Result<()> {
         let device = Device::Cpu;
         let config = NetConfig {
-            embedding_net_units: vec![8, 8],
+            embedding_net_units: vec![64, 64],
             input_dim: 4,
             action_dim: 2,
             n_quantile: 3,
         };
-        let net = Net::new(config, device);
+        let p = nn::VarStore::new(device);
+        let net = Net::new(config, &p.root());
 
-        // (batch_size = 2, input_dim = 4)
         let x = Tensor::randn(&[2, 4], (Kind::Float, device));
         x.print();
-        // (batch_size = 2, action_dim = 2, n_quantile = 3) => (2, 6)
         let y = net.forward(&x);
         y.print();
 
