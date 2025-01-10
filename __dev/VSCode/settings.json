@@ -1,4 +1,5 @@
 {
+    // フォントの設定
     "editor.fontFamily": "'Monoid', 'Rounded Mgen+ 1mn'",
 
     // ---- workbench の設定 ----
@@ -50,10 +51,8 @@
         "TODO",
         "XXX",
         "[ ]",
-        "WIP",
-        "NOTE",
-        "DEBUG",
-        "ASWIP",
+        "[x]",
+        "ASWIP"
     ],
     "todo-tree.highlights.customHighlight": {
         "BUG": {
@@ -64,6 +63,9 @@
         },
         "FIXME": {
             "icon": "flame"
+        },
+        "TODO": {
+            "icon": "check"
         },
         "XXX": {
             "icon": "x"
