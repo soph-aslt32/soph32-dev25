@@ -41,9 +41,6 @@ impl NetConfig {
 ///
 /// 中間層の活性化関数はMishが使用されます．
 pub struct Net {
-    /// 訓練モードのフラグです．
-    train: bool,
-
     /// Embeddingネットワークです．
     embedding_net: SequentialT,
 
@@ -65,8 +62,6 @@ impl Net {
         config: NetConfig,
         p: &nn::Path,
     ) -> Self {
-        let train = true;
-
         let input_dim = config.input_dim;
         let action_dim = config.action_dim;
         let n_quantile = config.n_quantile;
@@ -120,7 +115,6 @@ impl Net {
         };
 
         Self {
-            train,
             embedding_net,
             alpha_net,
             beta_net,
@@ -140,15 +134,15 @@ impl Net {
     /// ## Returns
     ///
     /// * `Tensor` - 出力データです．(batch_size, action_dim, n_quantile)の形状の`Tensor`です．
-    pub fn forward(&self, x: &Tensor) -> Tensor {
-        let embedding = self.embedding_net.forward_t(x, self.train);
+    pub fn forward(&self, x: &Tensor, train: bool) -> Tensor {
+        let embedding = self.embedding_net.forward_t(x, train);
 
         // α, βを計算. (batch_size, action_dim)
-        let alpha = self.alpha_net.forward_t(&embedding, self.train);
-        let beta = self.beta_net.forward_t(&embedding, self.train);
+        let alpha = self.alpha_net.forward_t(&embedding, train);
+        let beta = self.beta_net.forward_t(&embedding, train);
 
         // non-crossing制約を満たすためのネットワークを適用. (batch_size, action_dim * n_quantile)
-        let nc = self.nc_net.forward_t(&embedding, self.train);
+        let nc = self.nc_net.forward_t(&embedding, train);
         // Tensorの最後の次元で累積和を計算．(batch_size, action_dim * n_quantile)
         let nc = nc.contiguous().view([nc.size()[0], self.config.action_dim, self.config.n_quantile]);
         let nc = nc.cumsum(-1, nc.kind());
@@ -165,10 +159,6 @@ impl Net {
 
         // 出力データの形状を(batch_size, action_dim * n_quantile)に変換．
         y.contiguous().view([y.size()[0], -1])
-    }
-
-    pub fn set_train(&mut self, train: bool) {
-        self.train = train;
     }
 
     fn mlp_mish(input_dim: i64, units: Vec<i64>, vs: &nn::Path) -> SequentialT {
@@ -219,7 +209,7 @@ mod test {
 
         let x = Tensor::randn(&[2, 4], (Kind::Float, device));
         x.print();
-        let y = net.forward(&x);
+        let y = net.forward(&x, true);
         y.print();
 
         Ok(())
