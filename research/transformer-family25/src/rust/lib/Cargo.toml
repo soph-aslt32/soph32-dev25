@@ -1,0 +1,11 @@
+[package]
+name = "lib"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0.216", features = ["derive"] }
+anyhow = "1.0.38"
+serde_yaml = "0.8.17"
+dyn-clone = "1.0.9"
+tch = { workspace = true }
