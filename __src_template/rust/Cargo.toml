@@ -1,0 +1,10 @@
+[workspace]
+
+members = [
+    "bin",
+    "lib",
+]
+
+[workspace.dependencies]
+tch = "0.5.0"
+itertools = "0.10.3"
