@@ -1,6 +1,7 @@
 use tch::nn::{LinearConfig, ModuleT, SequentialT};
 use tch::{nn, Tensor};
 
+#[derive(Debug, Clone)]
 pub struct NetConfig {
     /// Embeddingネットワークの中間層のユニット数です．
     ///
