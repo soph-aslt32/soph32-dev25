@@ -19,6 +19,17 @@ pub struct NetConfig {
     n_quantile: i64,
 }
 
+impl NetConfig {
+    pub fn new(embedding_net_units: Vec<i64>, input_dim: i64, action_dim: i64, n_quantile: i64) -> Self {
+        Self {
+            embedding_net_units,
+            input_dim,
+            action_dim,
+            n_quantile,
+        }
+    }
+}
+
 /// # About
 ///
 /// Non Crossing Quantile Regressionに使用されるニューラルネットワーク本体です．
