@@ -24,6 +24,7 @@
     "[markdown]": {
         "editor.tabSize": 2,
         "editor.wordWrap": "on",
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
     },
     "window.openFilesInNewWindow": "on",
     "markdownlint.config": {
@@ -51,8 +52,9 @@
         "TODO",
         "XXX",
         "[ ]",
-        "[x]",
-        "ASWIP"
+        // "[x]",
+        "ASWIP",
+        "ASTODO"
     ],
     "todo-tree.highlights.customHighlight": {
         "BUG": {
@@ -287,4 +289,6 @@
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff"
     },
+    "hediet.vscode-drawio.appearance": "light",
+    "terminal.integrated.persistentSessionReviveProcess": "never",
 }
