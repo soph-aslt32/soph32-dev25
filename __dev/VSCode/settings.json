@@ -83,6 +83,12 @@
             "rulerLane": "right",
             "rulerColour": "#FA8116",
         },
+        "ASTODO": {
+            "icon": "rocket",
+            "iconColour": "#0E497D",
+            "rulerLane": "right",
+            "rulerColour": "#0E497D",
+        }
     },
     // -----------------------
 
@@ -291,4 +297,5 @@
     },
     "hediet.vscode-drawio.appearance": "light",
     "terminal.integrated.persistentSessionReviveProcess": "never",
+    "autoDocstring.docstringFormat": "numpy",
 }
