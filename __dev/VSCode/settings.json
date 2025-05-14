@@ -298,4 +298,5 @@
     "hediet.vscode-drawio.appearance": "light",
     "terminal.integrated.persistentSessionReviveProcess": "never",
     "autoDocstring.docstringFormat": "numpy",
+    "powershell.integratedConsole.showOnStartup": false,
 }
