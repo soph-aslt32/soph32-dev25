@@ -4,6 +4,7 @@
     "editor.fontFamily": "'VL Gothic'",
     "terminal.integrated.fontSize": 16,
     "editor.fontSize": 14,
+    // --------------
 
     // ---- workbench の設定 ----
     "workbench.editor.wrapTabs": true,
@@ -19,24 +20,33 @@
 
     "editor.renderWhitespace": "all",
     "editor.suggest.showWords": false,
+    // --------------------------
+
+    // ----- rust-analyzer -----
     "rust-analyzer.completion.autoimport.enable": false,
+    // -------------------------
+
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "security.workspace.trust.untrustedFiles": "open",
     "editor.detectIndentation": false,
     "python.analysis.completeFunctionParens": true,
+
+    // ----- `Markdown` -----
     "[markdown]": {
         "editor.tabSize": 2,
         "editor.wordWrap": "on",
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
     },
-    "window.openFilesInNewWindow": "on",
     "markdownlint.config": {
         "MD024": {
             "siblings_only": true
         }
     },
-    "python.analysis.autoImportCompletions": false,
     "markdown-preview-enhanced.previewTheme": "github-light.css",
+    // ----------------------
+
+    "python.analysis.autoImportCompletions": false,
+    "window.openFilesInNewWindow": "on",
 
     // ----- `PlantUML` -----
     "[plantuml]": {
@@ -303,7 +313,9 @@
         "editor.defaultFormatter": "charliermarsh.ruff"
     },
     "hediet.vscode-drawio.appearance": "light",
-    "terminal.integrated.persistentSessionReviveProcess": "never",
     "autoDocstring.docstringFormat": "numpy",
+
+    // ----- ターミナル関係の設定 -----
+    "terminal.integrated.persistentSessionReviveProcess": "never",
     "powershell.integratedConsole.showOnStartup": false,
 }
