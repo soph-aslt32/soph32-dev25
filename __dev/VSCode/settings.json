@@ -1,6 +1,9 @@
 {
     // フォントの設定
-    "editor.fontFamily": "'Monoid', 'Rounded Mgen+ 1mn'",
+    // "editor.fontFamily": "'Monoid', 'Rounded Mgen+ 1mn'",
+    "editor.fontFamily": "'VL Gothic'",
+    "terminal.integrated.fontSize": 16,
+    "editor.fontSize": 14,
 
     // ---- workbench の設定 ----
     "workbench.editor.wrapTabs": true,
@@ -34,6 +37,12 @@
     },
     "python.analysis.autoImportCompletions": false,
     "markdown-preview-enhanced.previewTheme": "github-light.css",
+
+    // ----- `PlantUML` -----
+    "[plantuml]": {
+        "editor.wordWrap": "on",
+    },
+    // ----------------------
 
     // ----- `Todo Tree` -----
     "todo-tree.highlights.defaultHighlight": {
@@ -93,11 +102,9 @@
     // -----------------------
 
     "editor.acceptSuggestionOnEnter": "off",
-    "terminal.integrated.fontSize": 12,
     "window.confirmSaveUntitledWorkspace": false,
     "hediet.vscode-drawio.resizeImages": null,
     "security.workspace.trust.enabled": false,
-    "editor.fontSize": 12,
 
     // -----------以下Latexの設定-----------
     // 和文を使うため、助詞、句読点、全角括弧などを区切り文字として登録する
