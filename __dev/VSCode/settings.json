@@ -1,7 +1,8 @@
 {
     // フォントの設定
     // "editor.fontFamily": "'Monoid', 'Rounded Mgen+ 1mn'",
-    "editor.fontFamily": "'VL Gothic'",
+    // "editor.fontFamily": "'VL Gothic'",
+    "editor.fontFamily": "'Juisee HWNF'",
     "terminal.integrated.fontSize": 16,
     "editor.fontSize": 14,
     // --------------
