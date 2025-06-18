@@ -46,7 +46,13 @@
     "markdown-preview-enhanced.previewTheme": "github-light.css",
     // ----------------------
 
+    // ----- `Python` -----
+    "python.analysis.inlayHints.callArgumentNames": "partial",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "python.analysis.inlayHints.variableTypes": true,
     "python.analysis.autoImportCompletions": false,
+
     "window.openFilesInNewWindow": "on",
 
     // ----- `PlantUML` -----
