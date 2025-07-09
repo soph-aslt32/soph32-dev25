@@ -17,11 +17,33 @@
         "editorInlayHint.parameterBackground": "#1b1f3b",
         "editorInlayHint.typeForeground": "#454ade",
         "editorInlayHint.typeBackground": "#1b1f3b",
+        // インデントガイドラインの設定
+        // "editorIndentGuide.background1": "#ffffff33",
+        // "editorIndentGuide.background2": "#ffffff33",
+        // "editorIndentGuide.background3": "#ffffff33",
+        // "editorIndentGuide.background4": "#ffffff33",
+        // "editorIndentGuide.background5": "#ffffff33",
+        // "editorIndentGuide.background6": "#ffffff33",
+        "editorIndentGuide.background1": "#31cfeb33",
+        "editorIndentGuide.background2": "#4d34d933",
+        "editorIndentGuide.background3": "#c6e80533",
+        "editorIndentGuide.background4": "#3e2bab33",
+        "editorIndentGuide.background5": "#7a3a2f33",
+        "editorIndentGuide.background6": "#33258033",
+        "editorIndentGuide.activeBackground1": "#31cfeb",
+        "editorIndentGuide.activeBackground2": "#4d34d9",
+        "editorIndentGuide.activeBackground3": "#c6e805",
+        "editorIndentGuide.activeBackground4": "#3e2bab",
+        "editorIndentGuide.activeBackground5": "#7a3a2f",
+        "editorIndentGuide.activeBackground6": "#332580",
     },
+    // --------------------------
 
+    // ------------ editorの設定 --------------
+    "editor.guides.bracketPairs": "active",
     "editor.renderWhitespace": "all",
     "editor.suggest.showWords": false,
-    // --------------------------
+    // ----------------------------------------
 
     // ----- rust-analyzer -----
     "rust-analyzer.completion.autoimport.enable": false,
@@ -325,4 +347,6 @@
     // ----- ターミナル関係の設定 -----
     "terminal.integrated.persistentSessionReviveProcess": "never",
     "powershell.integratedConsole.showOnStartup": false,
+
+    "python.defaultInterpreterPath": "c:\\Users\\witch\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
 }
