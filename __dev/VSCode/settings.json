@@ -366,6 +366,5 @@
     // ----- ターミナル関係の設定 -----
     "terminal.integrated.persistentSessionReviveProcess": "never",
     "powershell.integratedConsole.showOnStartup": false,
-
-    "python.defaultInterpreterPath": "c:\\Users\\witch\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+    "github.copilot.nextEditSuggestions.enabled": true,
 }
