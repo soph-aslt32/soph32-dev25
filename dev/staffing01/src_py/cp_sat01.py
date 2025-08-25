@@ -6,6 +6,16 @@
 from ortools.sat.python import cp_model
 import random
 import time
+import io
+import sys
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8")
+
+"""
+uv run cp_sat01.py > log.txt
+"""
+
 
 def schedule_products(W, P, durations, skills, deadlines: list[int]):
     """
@@ -29,19 +39,19 @@ def schedule_products(W, P, durations, skills, deadlines: list[int]):
 
     for p in range(P):
         for s in range(num_steps):
-            start[(p, s)] = model.NewIntVar(0, horizon, f'start_{p}_{s}')
-            end[(p, s)] = model.NewIntVar(0, horizon, f'end_{p}_{s}')
+            start[(p, s)] = model.NewIntVar(0, horizon, f"start_{p}_{s}")
+            end[(p, s)] = model.NewIntVar(0, horizon, f"end_{p}_{s}")
             # 工程時間
             d = durations[p][s]
             model.Add(end[(p, s)] == start[(p, s)] + d)
 
             for w in range(W):
-                assigned_worker[(p, s, w)] = model.NewBoolVar(f'assign_{p}_{s}_{w}')
+                assigned_worker[(p, s, w)] = model.NewBoolVar(f"assign_{p}_{s}_{w}")
                 # スキルがないなら0固定
                 if s not in skills[w]:
                     model.Add(assigned_worker[(p, s, w)] == 0)
 
-            # 1つの工程に1人だけ
+            # 1つの工程に必ず1人
             model.Add(sum(assigned_worker[(p, s, w)] for w in range(W)) == 1)
 
     # 工程順序制約
@@ -56,8 +66,11 @@ def schedule_products(W, P, durations, skills, deadlines: list[int]):
             for s in range(num_steps):
                 # optional interval
                 interval = model.NewOptionalIntervalVar(
-                    start[(p, s)], durations[p][s], end[(p, s)],
-                    assigned_worker[(p, s, w)], f'interval_{p}_{s}_{w}'
+                    start[(p, s)],
+                    durations[p][s],
+                    end[(p, s)],
+                    assigned_worker[(p, s, w)],
+                    f"interval_{p}_{s}_{w}",
                 )
                 intervals.append(interval)
         model.AddNoOverlap(intervals)
@@ -67,27 +80,30 @@ def schedule_products(W, P, durations, skills, deadlines: list[int]):
         model.Add(end[(p, num_steps - 1)] <= deadlines[p])
 
     # 目的関数: 全体のmakespan最小化
-    makespan = model.NewIntVar(0, horizon, 'makespan')
+    makespan = model.NewIntVar(0, horizon, "makespan")
     for p in range(P):
         model.Add(makespan >= end[(p, num_steps - 1)])
     model.Minimize(makespan)
 
     # 求解
     solver = cp_model.CpSolver()
-    solver.parameters.max_time_in_seconds = 30
+    solver.parameters.max_time_in_seconds = 300  # タイムリミット300秒
     status = solver.Solve(model)
 
     if status in (cp_model.OPTIMAL, cp_model.FEASIBLE):
-        print(f'Makespan = {solver.Value(makespan)}')
         for p in range(P):
-            print(f'Product {p}:')
+            print(f"Product {p}:")
             for s in range(num_steps):
                 st = solver.Value(start[(p, s)])
                 en = solver.Value(end[(p, s)])
-                w = next(w for w in range(W) if solver.Value(assigned_worker[(p, s, w)]) == 1)
-                print(f'  Step {s}: Worker {w}, [{st}, {en}]')
+                w = next(
+                    w for w in range(W) if solver.Value(assigned_worker[(p, s, w)]) == 1
+                )
+                print(f"  Step {s}: Worker {w}, [{st}, {en}]")
+        print(f"Makespan = {solver.Value(makespan)}")
+        print(f"status: {status}")
     else:
-        print('No solution found.')
+        print("No solution found.")
 
 
 # # ==== サンプル入力 ====
@@ -151,3 +167,7 @@ start_time = time.time()
 schedule_products(W, P, durations, skills, deadlines)
 end_time = time.time()
 print(f"計算時間: {end_time - start_time}秒")
+
+# 入力情報のdurationsの総和を計算して表示
+total_durations = sum(sum(d) for d in durations)
+print(f"総工程時間: {total_durations}")
