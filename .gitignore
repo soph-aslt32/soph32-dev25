@@ -25,3 +25,4 @@ Cargo.lock
 /dev/java
 /dev/rewind_supression
 /dev/sample04
+*.lock
