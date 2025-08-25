@@ -93,6 +93,7 @@
     "python.analysis.inlayHints.pytestParameters": true,
     "python.analysis.inlayHints.variableTypes": true,
     "python.analysis.autoImportCompletions": false,
+    "python.analysis.typeCheckingMode": "standard",
 
     "window.openFilesInNewWindow": "on",
 
@@ -367,4 +368,5 @@
     "terminal.integrated.persistentSessionReviveProcess": "never",
     "powershell.integratedConsole.showOnStartup": false,
     "github.copilot.nextEditSuggestions.enabled": true,
+
 }

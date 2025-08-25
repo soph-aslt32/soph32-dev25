@@ -21,3 +21,7 @@ Cargo.lock
 #.idea/
 
 *.pdf
+/dev/staffing
+/dev/java
+/dev/rewind_supression
+/dev/sample04
