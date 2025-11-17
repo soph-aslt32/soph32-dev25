@@ -373,6 +373,6 @@
     "terminal.integrated.persistentSessionReviveProcess": "never",
     "powershell.integratedConsole.showOnStartup": false,
     "github.copilot.nextEditSuggestions.enabled": true,
-    "workbench.iconTheme": "sweet-vscode-icons",
+    "workbench.iconTheme": "developer-icon-theme",
 
 }

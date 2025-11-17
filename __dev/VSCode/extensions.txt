@@ -3,7 +3,6 @@ charliermarsh.ruff
 davidanson.vscode-markdownlint
 docker.docker
 eamodio.gitlens
-eliverlara.sweet-vscode-icons
 fill-labs.dependi
 github.copilot
 github.copilot-chat
@@ -39,6 +38,7 @@ ms-vscode.remote-explorer
 ms-vscode.remote-server
 mushan.vscode-paste-image
 njpwerner.autodocstring
+rajeshwaran.developer-theme-dark
 redhat.java
 rust-lang.rust-analyzer
 shd101wyy.markdown-preview-enhanced
