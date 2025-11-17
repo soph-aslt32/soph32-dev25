@@ -105,8 +105,8 @@
     // ----- `Todo Tree` -----
     "todo-tree.highlights.defaultHighlight": {
         // "fontWeight": "bold",
-        "fontStyle": "italic",
-        "textDecoration": "underline",
+        // "fontStyle": "italic",
+        // "textDecoration": "underline",
         // "borderRadius": "",
         // "icon": "",
         // "iconColour": "",
@@ -114,7 +114,7 @@
         "rulerColour": "#F0F465",
         // "rulerOpacity": 0,
         // "rulerLane": "right",
-        "type": "text-and-comment",
+        "type": "tag",
         "foreground": "#F0F465",
         // "background": "#6564DB",
         // "opacity": 100,
@@ -141,13 +141,13 @@
             "icon": "flame"
         },
         "TODO": {
-            "icon": "check"
+            "icon": "check-circle-fill"
         },
         "XXX": {
             "icon": "x"
         },
         "[ ]": {
-            "icon": "issue-draft"
+            "icon": "checkbox"
         },
         "[x]": {
             "icon": "issue-closed"
@@ -156,11 +156,17 @@
             "icon": "zap",
             "foreground": "#7FDEFF",
             "rulerColour": "#7FDEFF",
+            "fontStyle": "italic",
+            "textDecoration": "underline",
+            "type": "line"
         },
         "ASTODO": {
             "icon": "rocket",
             "foreground": "#907AD6",
             "rulerColour": "#907AD6",
+            "fontStyle": "italic",
+            "textDecoration": "underline",
+            "type": "line"
         }
     },
     // -----------------------
