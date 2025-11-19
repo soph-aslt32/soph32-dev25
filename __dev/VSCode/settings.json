@@ -158,7 +158,7 @@
             "rulerColour": "#7FDEFF",
             "fontStyle": "italic",
             "textDecoration": "underline",
-            "type": "line"
+            "type": "text"
         },
         "ASTODO": {
             "icon": "rocket",
@@ -166,7 +166,7 @@
             "rulerColour": "#907AD6",
             "fontStyle": "italic",
             "textDecoration": "underline",
-            "type": "line"
+            "type": "text"
         }
     },
     // -----------------------
