@@ -111,11 +111,11 @@
         // "icon": "",
         // "iconColour": "",
         "gutterIcon": true,
-        "rulerColour": "#F0F465",
+        "rulerColour": "#4daa57",
         // "rulerOpacity": 0,
         // "rulerLane": "right",
         "type": "tag",
-        "foreground": "#F0F465",
+        "foreground": "#4daa57",
         // "background": "#6564DB",
         // "opacity": 100,
     },
@@ -127,8 +127,11 @@
         "XXX",
         "[ ]",
         // "[x]",
-        "ASWIP",
-        "ASTODO"
+        "WIP",
+        "PEND",
+        "WIP:SCREEN",
+        "TODO:SCREEN",
+        "PEND:SCREEN"
     ],
     "todo-tree.highlights.customHighlight": {
         "BUG": {
@@ -152,18 +155,32 @@
         "[x]": {
             "icon": "issue-closed"
         },
-        "ASWIP": {
+        "WIP": {
+            "icon": "zap"
+        },
+        "PEND": {
+            "icon": "clock"
+        },
+        "WIP:SCREEN": {
             "icon": "zap",
-            "foreground": "#7FDEFF",
-            "rulerColour": "#7FDEFF",
+            "foreground": "#9ac6c5",
+            "rulerColour": "#9ac6c5",
             "fontStyle": "italic",
             "textDecoration": "underline",
             "type": "text"
         },
-        "ASTODO": {
+        "TODO:SCREEN": {
             "icon": "rocket",
-            "foreground": "#907AD6",
-            "rulerColour": "#907AD6",
+            "foreground": "#7785ac",
+            "rulerColour": "#7785ac",
+            "fontStyle": "italic",
+            "textDecoration": "underline",
+            "type": "text"
+        },
+        "PEND:SCREEN": {
+            "icon": "clock",
+            "foreground": "#5b2a86",
+            "rulerColour": "#5b2a86",
             "fontStyle": "italic",
             "textDecoration": "underline",
             "type": "text"
