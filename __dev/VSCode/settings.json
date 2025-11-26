@@ -111,11 +111,11 @@
         // "icon": "",
         // "iconColour": "",
         "gutterIcon": true,
-        "rulerColour": "#3db30e",
+        "rulerColour": "#458f1a",
         // "rulerOpacity": 0,
         // "rulerLane": "right",
         "type": "tag",
-        "foreground": "#3db30e",
+        "foreground": "#458f1a",
         // "background": "#6564DB",
         // "opacity": 100,
     },
@@ -129,9 +129,11 @@
         // "[x]",
         "WIP",
         "PEND",
+        "NOTE",
         "WIP:SCREEN",
         "TODO:SCREEN",
-        "PEND:SCREEN"
+        "PEND:SCREEN",
+        "NOTE:SCREEN",
     ],
     "todo-tree.highlights.customHighlight": {
         "BUG": {
@@ -145,6 +147,7 @@
         },
         "TODO": {
             "icon": "check-circle-fill"
+            // "icon": "rocket"
         },
         "XXX": {
             "icon": "x"
@@ -161,30 +164,41 @@
         "PEND": {
             "icon": "clock"
         },
+        "NOTE": {
+            "icon": "note"
+        },
         "WIP:SCREEN": {
             "icon": "zap",
-            "foreground": "#a015d6",
-            "rulerColour": "#a015d6",
+            "foreground": "#a929f2",
+            "rulerColour": "#a929f2",
             "fontStyle": "italic",
             "textDecoration": "underline",
             "type": "text"
         },
         "TODO:SCREEN": {
-            "icon": "rocket",
-            "foreground": "#6c8de0",
-            "rulerColour": "#6c8de0",
+            "icon": "hubot",
+            "foreground": "#8e04de",
+            "rulerColour": "#8e04de",
             "fontStyle": "italic",
             "textDecoration": "underline",
             "type": "text"
         },
         "PEND:SCREEN": {
             "icon": "clock",
-            "foreground": "#bdffa3",
-            "rulerColour": "#bdffa3",
+            "foreground": "#2c4a1b",
+            "rulerColour": "#2c4a1b",
             "fontStyle": "italic",
             "textDecoration": "underline",
             "type": "text"
-        }
+        },
+        "NOTE:SCREEN": {
+            "icon": "dependabot",
+            "foreground": "#681896",
+            "rulerColour": "#681896",
+            "fontStyle": "italic",
+            "textDecoration": "underline",
+            "type": "text"
+        },
     },
     // -----------------------
 
