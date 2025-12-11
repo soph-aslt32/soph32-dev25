@@ -111,11 +111,11 @@
         // "icon": "",
         // "iconColour": "",
         "gutterIcon": true,
-        "rulerColour": "#458f1a",
+        "rulerColour": "#00ACFA",
         // "rulerOpacity": 0,
         // "rulerLane": "right",
-        "type": "tag",
-        "foreground": "#458f1a",
+        "type": "text",
+        "foreground": "#00ACFA",
         // "background": "#6564DB",
         // "opacity": 100,
     },
@@ -130,6 +130,7 @@
         "WIP",
         "PEND",
         "NOTE",
+        "NOTES",
         "WIP:SCREEN",
         "TODO:SCREEN",
         "PEND:SCREEN",
@@ -137,64 +138,98 @@
     ],
     "todo-tree.highlights.customHighlight": {
         "BUG": {
-            "icon": "bug"
+            "icon": "bug",
+            // DarkRed
+            "rulerColour": "#8B0000",
+            "foreground": "#8B0000",
         },
         "HACK": {
-            "icon": "tools"
+            "icon": "tools",
+            // HotPink
+            "rulerColour": "#FF69B4",
+            "foreground": "#FF69B4",
         },
         "FIXME": {
-            "icon": "flame"
+            "icon": "flame",
+            // Yellow
+            "rulerColour": "#FFFF00",
+            "foreground": "#FFFF00",
         },
         "TODO": {
-            "icon": "check-circle-fill"
+            "icon": "check-circle-fill",
+            // Orange
+            "rulerColour": "#FFA500",
+            "foreground": "#FFA500",
             // "icon": "rocket"
         },
         "XXX": {
-            "icon": "x"
+            "icon": "x",
+            // Crimson
+            "rulerColour": "#DC143C",
+            "foreground": "#DC143C",
         },
         "[ ]": {
-            "icon": "checkbox"
+            "icon": "checkbox",
+            // Green
+            "rulerColour": "#008000",
+            "foreground": "#008000",
         },
         "[x]": {
-            "icon": "issue-closed"
+            "icon": "issue-closed",
+            // "rulerColour": "#008000",
+            // "foreground": "#008000",
         },
         "WIP": {
-            "icon": "zap"
+            "icon": "zap",
+            // Violet
+            "rulerColour": "#EE82EE",
+            "foreground": "#EE82EE",
         },
         "PEND": {
-            "icon": "clock"
+            "icon": "clock",
+            // DarkGreen
+            "rulerColour": "#006400",
+            "foreground": "#006400",
         },
         "NOTE": {
-            "icon": "note"
+            "icon": "paintbrush",
+            // "rulerColour": "#FF0000",
+            // "foreground": "#FF0000",
         },
+        "NOTES": {
+            "icon": "paintbrush",
+            // "rulerColour": "#FF0000",
+            // "foreground": "#FF0000",
+        },
+        // Additional custom highlights
         "WIP:SCREEN": {
             "icon": "zap",
-            "foreground": "#a929f2",
-            "rulerColour": "#a929f2",
+            "foreground": "#b57ffa",
+            "rulerColour": "#b57ffa",
             "fontStyle": "italic",
             "textDecoration": "underline",
             "type": "text"
         },
         "TODO:SCREEN": {
             "icon": "hubot",
-            "foreground": "#8e04de",
-            "rulerColour": "#8e04de",
+            "foreground": "#682eb3",
+            "rulerColour": "#682eb3",
             "fontStyle": "italic",
             "textDecoration": "underline",
             "type": "text"
         },
         "PEND:SCREEN": {
             "icon": "clock",
-            "foreground": "#2c4a1b",
-            "rulerColour": "#2c4a1b",
+            "foreground": "#63507d",
+            "rulerColour": "#63507d",
             "fontStyle": "italic",
             "textDecoration": "underline",
             "type": "text"
         },
         "NOTE:SCREEN": {
             "icon": "dependabot",
-            "foreground": "#681896",
-            "rulerColour": "#681896",
+            "foreground": "#bc90f5",
+            "rulerColour": "#bc90f5",
             "fontStyle": "italic",
             "textDecoration": "underline",
             "type": "text"
