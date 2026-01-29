@@ -120,6 +120,7 @@
         // "opacity": 100,
     },
     "todo-tree.general.tags": [
+        "TEST",
         "BUG",
         "HACK",
         "FIXME",
@@ -131,23 +132,23 @@
         "PEND",
         "NOTE",
         "NOTES",
-        "WIP:SCREEN",
-        "TODO:SCREEN",
-        "PEND:SCREEN",
-        "NOTE:SCREEN",
+        "WIP:AS",
+        "TODO:AS",
+        "PEND:AS",
+        "NOTE:AS",
     ],
     "todo-tree.highlights.customHighlight": {
         "BUG": {
             "icon": "bug",
-            // DarkRed
-            "rulerColour": "#8B0000",
-            "foreground": "#8B0000",
+            // GoldenRod
+            "rulerColour": "#DAA520",
+            "foreground": "#DAA520",
         },
         "HACK": {
             "icon": "tools",
-            // HotPink
-            "rulerColour": "#FF69B4",
-            "foreground": "#FF69B4",
+            // Coral
+            "rulerColour": "#FF7F50",
+            "foreground": "#FF7F50",
         },
         "FIXME": {
             "icon": "flame",
@@ -169,10 +170,10 @@
             "foreground": "#DC143C",
         },
         "[ ]": {
-            "icon": "checkbox",
-            // Green
-            "rulerColour": "#008000",
-            "foreground": "#008000",
+            "icon": "check",
+            // LimeGreen
+            "rulerColour": "#32CD32",
+            "foreground": "#32CD32",
         },
         "[x]": {
             "icon": "issue-closed",
@@ -202,34 +203,34 @@
             // "foreground": "#FF0000",
         },
         // Additional custom highlights
-        "WIP:SCREEN": {
+        "WIP:AS": {
             "icon": "zap",
-            "foreground": "#b57ffa",
-            "rulerColour": "#b57ffa",
+            "foreground": "#ea64be",
+            "rulerColour": "#ea64be",
             "fontStyle": "italic",
             "textDecoration": "underline",
             "type": "text"
         },
-        "TODO:SCREEN": {
-            "icon": "hubot",
-            "foreground": "#682eb3",
-            "rulerColour": "#682eb3",
+        "TODO:AS": {
+            "icon": "check-circle-fill",
+            "foreground": "#c6853b",
+            "rulerColour": "#c6853b",
             "fontStyle": "italic",
             "textDecoration": "underline",
             "type": "text"
         },
-        "PEND:SCREEN": {
+        "PEND:AS": {
             "icon": "clock",
-            "foreground": "#63507d",
-            "rulerColour": "#63507d",
+            "foreground": "#131c82",
+            "rulerColour": "#131c82",
             "fontStyle": "italic",
             "textDecoration": "underline",
             "type": "text"
         },
-        "NOTE:SCREEN": {
-            "icon": "dependabot",
-            "foreground": "#bc90f5",
-            "rulerColour": "#bc90f5",
+        "NOTE:AS": {
+            "icon": "paintbrush",
+            "foreground": "#9360d6",
+            "rulerColour": "#9360d6",
             "fontStyle": "italic",
             "textDecoration": "underline",
             "type": "text"
